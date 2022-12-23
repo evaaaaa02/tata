@@ -4,11 +4,13 @@ function openInNewTab(url) {
 }
 
 
-$.event.special.tap.emitTapOnTaphold = false;
-$(".container-bgA").on("tap", function() {
-  $(this).css("display","none");
-  $(".container-bgA-blank").css("display","inline-block");
-});
+
+$(".container-bgA").click(
+  function(){
+      $(this).css("display","none");
+      $(".container-bgA-blank").css("display","inline-block");
+  }
+)
 
 $(".container-bgB").on("tap", function() {
   $(this).css("display","none");
@@ -19,6 +21,10 @@ $(".container-bgC").on("tap", function() {
   $(this).css("display","none");
   $(".container-bgC-blank").css("display","inline-block");
 });
+$(".element").click(
+  function(){
+    $(".hambur_option").css("display","inline");
+  }
 
 $(".element").click(
   function(){
