@@ -12,19 +12,21 @@ $(".container-bgA").click(
   }
 )
 
-$(".container-bgB").on("tap", function() {
-  $(this).css("display","none");
-  $(".container-bgB-blank").css("display","inline-block");
-});
 
-$(".container-bgC").on("tap", function() {
-  $(this).css("display","none");
-  $(".container-bgC-blank").css("display","inline-block");
-});
-$(".element").click(
+$(".container-bgB").click(
   function(){
-    $(".hambur_option").css("display","inline");
+      $(this).css("display","none");
+      $(".container-bgB-blank").css("display","inline-block");
   }
+)
+
+
+$(".container-bgC").click(
+  function(){
+      $(this).css("display","none");
+      $(".container-bgC-blank").css("display","inline-block");
+  }
+)
 
 $(".element").click(
   function(){
