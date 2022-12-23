@@ -17,18 +17,7 @@ function preload() {
 function setup() {
   createCanvas(900, 1700);
   // Create the video
-  var constraints = {
-    audio: false,
-    video: {
-      facingMode: {
-        exact: "environment"
-      }
-    }    
-    //video: {
-      //facingMode: "user"
-    //} 
-  };
-  video = createCapture(constraints);
+  video = createCapture(VIDEO);
   video.size(900, 1700);
   video.hide();
 
@@ -50,25 +39,21 @@ function draw() {
   if(label=="fraction1" && percent>=0.99){
     // noLoop();
     $(".scan_A_sus").css("display","inline-block");
-    noLoop();
   }
 
   if(label=="fraction2" && percent>=0.99){
     // noLoop();
     $(".scan_B_sus").css("display","inline-block");
-    noLoop();
   }
 
   if(label=="fraction3" && percent>=0.99){
     // noLoop();
     $(".scan_C_sus").css("display","inline-block");
-    noLoop();
   }
 
 
   // 按換下一件loop就要打開，再打開相機時就可以
   $(".scan_A_sus").click(function(){
-    loop();
     $(".container-bgA-blank").css("display","none");
     $(".container-bgB").css("display","inline-block");
     $(".fractionA").css("display","inline-block");
@@ -77,7 +62,6 @@ function draw() {
   });
 
   $(".scan_B_sus").click(function(){
-    loop();
     $(".container-bgB-blank").css("display","none");
     $(".container-bgC").css("display","inline-block");
     $(".fractionB").css("display","inline-block");
@@ -86,7 +70,6 @@ function draw() {
   });
 
   $(".scan_C_sus").click(function(){
-    loop();
     $(".container-bgC-blank").css("display","none");
     $(".mix_ele").css("display","inline-block");
     $(".fractionC").css("display","inline-block");
@@ -101,6 +84,33 @@ function draw() {
     }
   );
 
+  function openInNewTab(url) {
+    window.open(url, '_self').focus();
+   }
+   
+   
+   $.event.special.tap.emitTapOnTaphold = false;
+   $(".container-bgA").on("tap", function() {
+     $(this).css("display","none");
+     $(".container-bgA-blank").css("display","inline-block");
+   });
+   
+   $(".container-bgB").on("tap", function() {
+     $(this).css("display","none");
+     $(".container-bgB-blank").css("display","inline-block");
+   });
+   
+   $(".container-bgC").on("tap", function() {
+     $(this).css("display","none");
+     $(".container-bgC-blank").css("display","inline-block");
+   });
+   
+   $(".element").click(
+     function(){
+       $(".hambur_option").css("display","inline");
+     }
+   )
+   
 }
 
 
