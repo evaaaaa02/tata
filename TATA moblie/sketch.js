@@ -83,33 +83,6 @@ function draw() {
       $(".element").css("display","inline-block");
     }
   );
-
-  function openInNewTab(url) {
-    window.open(url, '_self').focus();
-   }
-   
-   
-   $.event.special.tap.emitTapOnTaphold = false;
-   $(".container-bgA").on("tap", function() {
-     $(this).css("display","none");
-     $(".container-bgA-blank").css("display","inline-block");
-   });
-   
-   $(".container-bgB").on("tap", function() {
-     $(this).css("display","none");
-     $(".container-bgB-blank").css("display","inline-block");
-   });
-   
-   $(".container-bgC").on("tap", function() {
-     $(this).css("display","none");
-     $(".container-bgC-blank").css("display","inline-block");
-   });
-   
-   $(".element").click(
-     function(){
-       $(".hambur_option").css("display","inline");
-     }
-   )
    
 }
 
