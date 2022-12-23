@@ -9,6 +9,7 @@ $(".container-bgA").click(
   function(){
       $(this).css("display","none");
       $(".container-bgA-blank").css("display","inline-block");
+      console.log("已經點擊");
   }
 )
 
